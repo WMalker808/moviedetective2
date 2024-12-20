@@ -1,0 +1,126 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detective</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+    <div class="max-w-xl mx-auto p-4">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold mb-2">Movie Detective</h2>
+                <div class="text-lg font-semibold text-blue-600" id="score">
+                    Score: 100
+                </div>
+            </div>
+
+            <div id="clues-container" class="mb-6 space-y-3">
+                <!-- Clues will be inserted here -->
+            </div>
+
+            <div id="game-controls" class="space-y-4">
+                <div class="flex gap-2">
+                    <input
+                        type="text"
+                        id="guess-input"
+                        placeholder="Enter your guess..."
+                        class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                    <button
+                        onclick="makeGuess()"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                    >
+                        Guess
+                    </button>
+                </div>
+
+                <button
+                    onclick="revealClue()"
+                    id="reveal-button"
+                    class="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50"
+                >
+                    Reveal Next Clue (-10 points)
+                </button>
+            </div>
+
+            <div id="message" class="mt-4 p-3 rounded-lg text-center hidden">
+                <!-- Message will be inserted here -->
+            </div>
+
+            <button
+                onclick="location.reload()"
+                id="play-again"
+                class="w-full mt-4 px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 hidden"
+            >
+                Play Again
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function updateClues(clues) {
+            const container = document.getElementById('clues-container');
+            container.innerHTML = clues.map(clue => `
+                <div class="bg-blue-50 p-3 rounded-lg flex justify-between items-center">
+                    <span class="font-semibold">${clue.type}:</span>
+                    <span>${clue.value}</span>
+                </div>
+            `).join('');
+        }
+
+        function showMessage(message, isSuccess = false, isGameOver = false) {
+            const messageEl = document.getElementById('message');
+            messageEl.innerHTML = message;
+            messageEl.className = `mt-4 p-3 rounded-lg text-center ${
+                isSuccess ? 'bg-green-100 text-green-700' : 
+                isGameOver ? 'bg-red-100 text-red-700' : 
+                'bg-blue-100 text-blue-700'
+            }`;
+            messageEl.classList.remove('hidden');
+        }
+
+        async function makeGuess() {
+            const guess = document.getElementById('guess-input').value;
+            try {
+                const response = await axios.post('/guess', { guess });
+                const { message, score, gameOver } = response.data;
+                
+                document.getElementById('score').textContent = `Score: ${score}`;
+                showMessage(message, message.includes('Congratulations'), gameOver);
+                
+                if (gameOver) {
+                    document.getElementById('game-controls').classList.add('hidden');
+                    document.getElementById('play-again').classList.remove('hidden');
+                }
+                
+                document.getElementById('guess-input').value = '';
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function revealClue() {
+            try {
+                const response = await axios.post('/reveal');
+                const { clues, score } = response.data;
+                
+                updateClues(clues);
+                document.getElementById('score').textContent = `Score: ${score}`;
+                
+                if (clues.length >= 8 || score <= 10) {
+                    document.getElementById('reveal-button').disabled = true;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Initialize first clue
+        revealClue();
+    </script>
+</body>
+</html>
