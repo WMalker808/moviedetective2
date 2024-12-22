@@ -192,6 +192,10 @@ def reveal_clue():
         'clues': current_movie['clues'][:revealed_count],
         'score': score
     })
+# Route to about page
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
