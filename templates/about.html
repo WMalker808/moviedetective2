@@ -1,0 +1,42 @@
+<!-- templates/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Movie Detective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+    <div class="max-w-xl mx-auto p-4">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold mb-2">About Movie Detective</h2>
+                <a href="/" class="text-blue-600 hover:text-blue-800 text-sm">← Back to game</a>
+            </div>
+
+            <div class="prose">
+                <p class="mb-4">
+                    Movie Detective is a game where players try to guess a movie based on a series of clues. Each revealed clue reduces your potential score, so choose wisely!
+                </p>
+                
+                <h3 class="text-xl font-semibold mb-2">How to Play</h3>
+                <ul class="list-disc ml-6 mb-4">
+                    <li class="mb-2">Start with 100 points</li>
+                    <li class="mb-2">Reveal clues by clicking the "Reveal Next Clue" button (-10 points per clue)</li>
+                    <li class="mb-2">Type your guess in the input field</li>
+                    <li class="mb-2">Try to guess the movie with as few clues as possible</li>
+                </ul>
+
+                <p class="mb-4">
+                    The game ends when you either guess correctly or run out of clues/points.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-8 text-gray-500 text-sm">
+        <p>&copy; M Walker, 2024</p>
+    </footer>
+</body>
+</html>
