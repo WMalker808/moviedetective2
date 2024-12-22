@@ -1,5 +1,3 @@
-# movies.py
-
 MOVIES = [
     {
         "title": "The Dark Knight",
@@ -129,6 +127,136 @@ MOVIES = [
             {"type": "Director", "value": "James Cameron"},
             {"type": "Famous Quote", "value": "I see you"},
             {"type": "Lead Actor", "value": "Sam Worthington"}
+        ]
+    },
+    {
+        "title": "E.T. the Extra-Terrestrial",
+        "clues": [
+            {"type": "Year", "value": "1982"},
+            {"type": "Genre", "value": "Sci-Fi/Family"},
+            {"type": "Runtime", "value": "115 minutes"},
+            {"type": "Box Office", "value": "$792.9M"},
+            {"type": "Oscar Wins", "value": "4"},
+            {"type": "Director", "value": "Steven Spielberg"},
+            {"type": "Famous Quote", "value": "E.T. phone home"},
+            {"type": "Lead Actor", "value": "Henry Thomas"}
+        ]
+    },
+    {
+        "title": "Goodfellas",
+        "clues": [
+            {"type": "Year", "value": "1990"},
+            {"type": "Genre", "value": "Crime/Drama"},
+            {"type": "Runtime", "value": "146 minutes"},
+            {"type": "Box Office", "value": "$47.1M"},
+            {"type": "Oscar Wins", "value": "1"},
+            {"type": "Director", "value": "Martin Scorsese"},
+            {"type": "Famous Quote", "value": "As far back as I can remember, I always wanted to be a gangster"},
+            {"type": "Lead Actor", "value": "Ray Liotta"}
+        ]
+    },
+    {
+        "title": "Star Wars: Episode IV - A New Hope",
+        "clues": [
+            {"type": "Year", "value": "1977"},
+            {"type": "Genre", "value": "Sci-Fi/Adventure"},
+            {"type": "Runtime", "value": "121 minutes"},
+            {"type": "Box Office", "value": "$775M"},
+            {"type": "Oscar Wins", "value": "6"},
+            {"type": "Director", "value": "George Lucas"},
+            {"type": "Famous Quote", "value": "May the Force be with you"},
+            {"type": "Lead Actor", "value": "Mark Hamill"}
+        ]
+    },
+    {
+        "title": "Schindler's List",
+        "clues": [
+            {"type": "Year", "value": "1993"},
+            {"type": "Genre", "value": "Biography/Drama"},
+            {"type": "Runtime", "value": "195 minutes"},
+            {"type": "Box Office", "value": "$322.2M"},
+            {"type": "Oscar Wins", "value": "7"},
+            {"type": "Director", "value": "Steven Spielberg"},
+            {"type": "Famous Quote", "value": "Whoever saves one life saves the world entire"},
+            {"type": "Lead Actor", "value": "Liam Neeson"}
+        ]
+    },
+    {
+        "title": "Fight Club",
+        "clues": [
+            {"type": "Year", "value": "1999"},
+            {"type": "Genre", "value": "Drama/Thriller"},
+            {"type": "Runtime", "value": "139 minutes"},
+            {"type": "Box Office", "value": "$101.2M"},
+            {"type": "Oscar Wins", "value": "0"},
+            {"type": "Director", "value": "David Fincher"},
+            {"type": "Famous Quote", "value": "The first rule of Fight Club is: you do not talk about Fight Club"},
+            {"type": "Lead Actor", "value": "Brad Pitt"}
+        ]
+    },
+    {
+        "title": "The Silence of the Lambs",
+        "clues": [
+            {"type": "Year", "value": "1991"},
+            {"type": "Genre", "value": "Crime/Thriller"},
+            {"type": "Runtime", "value": "118 minutes"},
+            {"type": "Box Office", "value": "$272.7M"},
+            {"type": "Oscar Wins", "value": "5"},
+            {"type": "Director", "value": "Jonathan Demme"},
+            {"type": "Famous Quote", "value": "A census taker once tried to test me. I ate his liver with some fava beans"},
+            {"type": "Lead Actor", "value": "Jodie Foster"}
+        ]
+    },
+    {
+        "title": "Back to the Future",
+        "clues": [
+            {"type": "Year", "value": "1985"},
+            {"type": "Genre", "value": "Sci-Fi/Adventure"},
+            {"type": "Runtime", "value": "116 minutes"},
+            {"type": "Box Office", "value": "$388.8M"},
+            {"type": "Oscar Wins", "value": "1"},
+            {"type": "Director", "value": "Robert Zemeckis"},
+            {"type": "Famous Quote", "value": "Where we're going, we don't need roads"},
+            {"type": "Lead Actor", "value": "Michael J. Fox"}
+        ]
+    },
+    {
+        "title": "The Lion King",
+        "clues": [
+            {"type": "Year", "value": "1994"},
+            {"type": "Genre", "value": "Animation/Drama"},
+            {"type": "Runtime", "value": "88 minutes"},
+            {"type": "Box Office", "value": "$968.5M"},
+            {"type": "Oscar Wins", "value": "2"},
+            {"type": "Director", "value": "Roger Allers"},
+            {"type": "Famous Quote", "value": "Hakuna matata"},
+            {"type": "Lead Actor", "value": "Matthew Broderick"}
+        ]
+    },
+    {
+        "title": "Gladiator",
+        "clues": [
+            {"type": "Year", "value": "2000"},
+            {"type": "Genre", "value": "Action/Drama"},
+            {"type": "Runtime", "value": "155 minutes"},
+            {"type": "Box Office", "value": "$460.6M"},
+            {"type": "Oscar Wins", "value": "5"},
+            {"type": "Director", "value": "Ridley Scott"},
+            {"type": "Famous Quote", "value": "Are you not entertained?"},
+            {"type": "Lead Actor", "value": "Russell Crowe"}
+        ]
+    },
+    {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "clues": [
+            {"type": "Year", "value": "2001"},
+            {"type": "Genre", "value": "Fantasy/Adventure"},
+            {"type": "Runtime", "value": "178 minutes"},
+            {"type": "Box Office", "value": "$897.7M"},
+            {"type": "Oscar Wins", "value": "4"},
+            {"type": "Director", "value": "Peter Jackson"},
+            {"type": "Famous Quote", "value": "You shall not pass!"},
+            {"type": "Lead Actor", "value": "Elijah Wood"}
         ]
     }
 ]
