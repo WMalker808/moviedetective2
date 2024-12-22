@@ -239,7 +239,7 @@ MOVIES = [
             {"type": "Year", "value": "2000"},
             {"type": "Supporting Actor", "value": "Djimon Hounsou"},
             {"type": "Genre", "value": "Action/Drama"},
-            {"type": "Franchise", "value": "1 sequel planned"},
+            {"type": "Franchise", "value": "1 sequel"},
             {"type": "Oscar Wins", "value": "5 (Including Best Picture)"},
             {"type": "Famous Quote", "value": "Are you not entertained?"},
             {"type": "Lead Actor", "value": "Russell Crowe"},
