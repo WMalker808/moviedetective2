@@ -189,7 +189,7 @@ MOVIES = [
             {"type": "Genre", "value": "Drama/Thriller"},
             {"type": "Franchise", "value": "No sequels"},
             {"type": "Oscar Wins", "value": "0"},
-            {"type": "Famous Quote", "value": "The first rule of Fight Club is: you do not talk about Fight Club"},
+            {"type": "Famous Quote", "value": "The first rule of ? is: you do not talk about ?"},
             {"type": "Lead Actor", "value": "Brad Pitt"},
             {"type": "Director", "value": "David Fincher"}
         ]
