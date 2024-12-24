@@ -1,4 +1,3 @@
-#!/Users/max_walker/moviedetective/bin/python3
 from flask import Flask, render_template, request, jsonify, session
 from movies import MOVIES
 import random
@@ -41,6 +40,29 @@ def guess():
         'message': message,
         'score': score,
         'gameOver': game_over
+    })
+
+@app.route('/give-up', methods=['POST'])
+def give_up():
+    current_movie = session.get('current_movie')
+    message = f"You gave up! The movie was {current_movie['title']}."
+    
+    # Start new game
+    new_movie = random.choice(MOVIES)
+    while new_movie == current_movie:  # Ensure we don't get the same movie
+        new_movie = random.choice(MOVIES)
+    
+    # Reset all session variables
+    session['current_movie'] = new_movie
+    session['score'] = 100  # Reset to starting score for new game
+    session['revealed_count'] = 1
+    session['game_over'] = False
+    
+    return jsonify({
+        'message': message,
+        'score': 100,
+        'newGame': True,
+        'gameOver': False
     })
 
 @app.route('/reveal', methods=['POST'])
